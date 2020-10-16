@@ -1,6 +1,74 @@
-body{
-    font-family: 'Crimson Pro', serif;
+* {
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+	ox-sizing: border-box;
 }
+
+.camel{
+    color: #c19a6b;
+}
+
+.blue {
+	color: #59a2d3
+}
+
+i  {
+    padding: 10px;
+}
+
+.title {	
+	text-align: center;
+	color: #FFF;
+	align-items: center;
+	letter-spacing: 1px;
+}
+
+h1 {
+	background-image: url("https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif");
+	background-size: cover;
+	color: transparent;
+	-moz-background-clip: text;
+	-webkit-background-clip: text;
+	font-size: 40px;
+	line-height: .75;
+	margin: 10px 0;
+}
+
+
+/* styling my button */
+
+.white-mode {
+	text-decoration: none;
+	padding: 7px 10px;
+	background-color: #122;
+	border-radius: 3px;
+	color: #FFF;
+	transition: .35s ease-in-out;
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+}
+
+.white-mode:hover {
+	background-color: #FFF;
+	color: #122;
+}
+
+/* a {
+    text-decoration: none;
+}
+
+a:hover{
+    color:white;
+    text-decoration:none;
+    cursor:pointer;
+} */
+
+/* .titleWhite {
+    color: white;
+    font-family: 'Chilanka', cursive;
+} */
 
 /*--Header--*/
 header {
@@ -45,18 +113,43 @@ header .overlay {
   
 @media (pointer: coarse) and (hover: none) {
     header {
-      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+      background: url('https://images.pexels.com/photos/3178818/pexels-photo-3178818.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') black no-repeat center center scroll;
     }
     header video {
       display: none;
     }
 }
 
+/* Typewriter h1 */
+.typewriter h1 {
+	color: #c19a6b;
+	font-family: monospace;
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	border-right: .15em solid orange; /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: .15em; /* Adjust as needed */
+	animation: 
+	  typing 3.5s steps(30, end),
+	  blink-caret .5s step-end infinite;
+  }
+  
+/* The typing effect */
+@keyframes typing {
+	from { width: 10% }
+	to { width: 100% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	20% { border-color: transparent }
+}
 
 .author{
     display:inline-block;
-    width:170px;
-    height:170px;
+    width:200px;
+    height:200px;
     border-radius:50%;
     background:url("https://images.pexels.com/photos/5081971/pexels-photo-5081971.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940") center no-repeat;
     background-size:cover;
@@ -64,72 +157,48 @@ header .overlay {
     margin-bottom:3px
 }
 
-h4, .meta{
-    font-size:1em;
+.socialMediaHeader {
+	font-size: 2rem;
 }
 
-.meta{
-  font-style:italic;
+.phone {
+	color: white;
 }
-
-@keyframes grow{
-  0% { transform: scale(1) translateY(0px)}
-  50% { transform: scale(1.2) translateY(-400px)}
-}
-
-/*--General styling--*/
-.content{  
-  padding:5% 10%;
-  text-align:justify
-}
-
-.camel{
-    color: #c19a6b;
-    font-family: 'Chilanka', cursive;
-}
-
-i  {
-    padding: 10px;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:hover{
-    color:white;
-    text-decoration:none;
-    cursor:pointer;
-}
-
-.titleWhite {
-    color: white;
-    font-family: 'Chilanka', cursive;
-}
-
+  
 /*--Navigation--*/
 #navigation {
 	background-color: #c19a6b;
-    padding: 5px 5px;
-    z-index: 1;
+    padding: 0px 5px;
+    z-index: 100;
     width: 100%;
 }
 
-#navigation li {
-    padding: 0 5px;
-    
+#navigation ul {
+	list-style: none;
+	text-align: center;	
 }
 
+#navigation ul li {
+	display: inline-block;	
+}
 
-#navigation li a {
+#navigation ul li a {
+	display: block;
+	padding: 5px;
+	text-decoration: none;
 	color: #fff;
+	font-weight: 800;
+	margin: 0 10px;
 }
 
-.navbar-brand,
-.navbar-brand:hover {
-	color: #fff;
+#navigation ul li a,
+#navigation ul li a:after,
+#navigation ul li a:before {
+  transition: all .5s;
 }
-
+#navigation ul li a:hover {
+  	color: #77a1c2;
+}
 
 .fixedNav #navigation {
 	position: fixed;
@@ -142,15 +211,15 @@ a:hover{
 }
 
 /*--About--*/
-.about {
-    margin-top: 2rem;
+#about {
+	margin: 10px;
 }
-.about img{
+#about img{
 	width: 100%;
 	border-radius: 5%;
 }
 
-.about h3{
+#about h3{
 	margin-bottom: 15px;
 }
 .about h5{
@@ -192,26 +261,65 @@ a:hover{
 	left: 0;
 }
 
-.aboutMe{
-    text-align: justify;
-}
-
-.title{
-    font-family: 'Chilanka', cursive;
-    color: #c19a6b;
-}
-
-ul {
-    list-style: none; /* Remove default bullets */
+/*--pie chart--*/
+#piechart {
+	display: grid;
+	grid-gap: 5px;
+	margin: auto 0;
+	background-color: #f7f7f7;
 }
   
-ul li::before {
-    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: #c19a6b; /* Change the color */
-    font-weight: bold; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
+@media (min-width: 420px) and (max-width: 659px) {
+	#piechart  {
+		grid-template-columns: repeat(2, 200px);
+	}
+
+	#about img {
+		display: none;
+	}
+}
+  
+@media (min-width: 660px) and (max-width: 899px) {
+	#piechart  {
+		grid-template-columns: repeat(2, 160px);
+	}
+}
+  
+@media (min-width: 900px) {
+	#piechart  {
+	  grid-template-columns: repeat(4, 160px);
+	}
+}
+  
+#piechart  .box {
+	width: 100%;
+	margin: 20% 0 0 20%;
+	
+}
+  
+#piechart  .box h4 {
+	font-size: 15px;
+	color: black;
+	
+}
+  
+#piechart  .box .chart {
+	position: relative;
+	width: 50%;
+	height: 50%;
+	font-size: 20px;
+	line-height: 200px;
+	height: 100px;
+	color: #122;
+  }
+  
+#piechart  .box canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	width: 100%;
+	text-align: center;
 }
 
 .max {
@@ -237,18 +345,17 @@ ul li::before {
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.30);
   }
   
-  .icon-contact {
+.icon-contact {
     text-align: center;
     font-size: 7.5em;
     color: rgba(152, 110, 110, 0.4);
     padding-top: 10px;
     padding-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
-  }
+}
 
 /*--Experience--*/
 /*/ start about work experience /*/
-
 #experience {
 	margin-top: 20px;
 }
@@ -260,6 +367,46 @@ ul li::before {
 	text-align: center;
 }
 
+/*/Education timeline /*/
+.dashedTimeline{
+	border-top: 2px dashed;
+	border-color:#bfbfc0 !important;
+	margin:2px; 
+	padding: 30px;
+}
+
+.dashedTimeline:nth-child(even) {
+	border-left: 2px dashed;
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	margin-right: 40px; 
+	padding-right: 0;
+}
+  
+.dashedTimeline:nth-child(odd) {
+	border-right: 2px dashed;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+	margin-left: 30px; 
+	padding-left: 0;
+  }
+  
+.dashedTimeline:first-child {
+	border-top: 0;
+	border-top-right-radius:0;
+	border-top-left-radius:0;
+  }
+  
+.dashedTimeline:last-child {
+	border-bottom-right-radius:0;
+	border-bottom-left-radius:0;
+}
+
+.educationImage{
+	width: 90px;
+}
+
+/*?Experience timeline /*/
 .timeline-label h4 {
 	margin-top: 0;
 	font-size: 30px;
@@ -422,13 +569,6 @@ ul li::before {
     color: #fff;
 }
   
-#portfolio h1{
-    font-size: 5em;
-    text-shadow: 0px 4px 3px #C19A6B,
-                0px 8px 13px #9B713F,
-                0px 18px 23px rgba(0,0,0,0.1);
-}
-  
 .thumbnail{
     position: relative;
 }
@@ -554,4 +694,109 @@ ul li::before {
 	color: #4E2E08;
 	font-size: 14px;
 	font-weight: bold;
+}
+
+/* Contact */
+.contact-me-container{
+	padding:3%;
+	background: #c19a6b;
+}
+
+.fa-user,.fa-at,.fa-phone
+{
+  color:black;
+}
+
+.submit-button{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+/* ========================
+Footer
+======================== */
+
+footer {
+  background-color: #2C3E50;
+  color:  #fff;
+  font-size: 1.5em;
+  text-align: center;
+  padding:3%;
+}
+a.tel,a.tel:hover
+{
+  text-decoration:none;
+  color:#fff;
+}
+a.social-button {
+	background: #fff;
+	font-size: 20px;
+	border-radius: 50%;
+	margin: 5px;
+}
+.address-container{
+	display: inline-block;
+	margin: 0 auto;
+}
+a.link-facebook,a.link-twitter,a.link-codepen,a.link-linkedin,a.link-instagram
+{
+  transition:0.4s ease;
+}
+a.link-twitter
+{
+  color:#1DA1F2;
+}
+a.link-facebook
+{
+ color: #3b5998;
+}
+a.link-linkedin
+{
+  color:#007bb6;
+}
+a.link-instagram
+{
+  color:#e95950;
+}
+a.link-facebook:hover{
+	background-color: #3b5998;
+	color: #fff;
+}
+
+a.link-twitter:hover{
+	background-color: #1DA1F2;
+	color: #fff;
+}
+
+a.link-codepen:hover{
+	background-color: black;
+	color: #fff;
+}
+
+a.link-linkedin:hover{
+	background-color: #007bb6;
+	color: #fff;
+}
+a.link-instagram:hover{
+	background-color: #e95950;
+	color: #fff;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: transparent!important;
+}
+.fa-heart {
+  color:#f32323;
+}
+h4.author
+{
+  letter-spacing:4px;
+}
+hr.footer-hr
+{
+  width:150px;
+}
+hr.copyright
+{
+  opacity:0.4;
 }
